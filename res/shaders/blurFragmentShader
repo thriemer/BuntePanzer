@@ -1,0 +1,23 @@
+#version 130
+
+uniform sampler2D picture;
+
+in vec2 blurTextureCoords[11];
+out vec4 FragColor;
+
+void main()  {
+	
+	FragColor = vec4(0.0);
+	FragColor += texture(picture, blurTextureCoords[0]) * 0.0093;
+	FragColor += texture(picture, blurTextureCoords[1]) * 0.028002;
+	FragColor += texture(picture, blurTextureCoords[2]) * 0.065984;
+	FragColor += texture(picture, blurTextureCoords[3]) * 0.121703;
+	FragColor += texture(picture, blurTextureCoords[4]) * 0.175713;
+	FragColor += texture(picture, blurTextureCoords[5]) * 0.198596;
+	FragColor += texture(picture, blurTextureCoords[6]) * 0.175713;
+	FragColor += texture(picture, blurTextureCoords[7]) * 0.121703;
+	FragColor += texture(picture, blurTextureCoords[8]) * 0.065984;
+	FragColor += texture(picture, blurTextureCoords[9]) * 0.028002;
+	FragColor += texture(picture, blurTextureCoords[10]) * 0.0093;
+	
+}

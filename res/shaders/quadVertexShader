@@ -1,0 +1,27 @@
+#version 130
+precision highp float;
+in vec2 aPos;
+out vec2 uv;
+
+uniform mat4 projMatrix;
+uniform mat4 viewMatrix;
+uniform mat4 transformationMatrix;
+uniform int mirrorVertical;
+uniform int mirrorHorizontal;
+uniform vec2 repeat;
+
+uniform vec4 textureOffset;
+uniform vec2 textureSize;
+
+void main(){
+	uv=vec2((aPos.x+0.5)/textureOffset.z+textureOffset.x,(aPos.y+0.5)/textureOffset.w+textureOffset.y);
+	uv = uv * repeat * textureSize;
+	vec2 transPos=aPos;
+	if(mirrorVertical==1){
+		transPos.x=-aPos.x;
+	}
+	if(mirrorHorizontal==1){
+		transPos.y=-aPos.y;
+	}
+	gl_Position =projMatrix*viewMatrix*transformationMatrix*vec4(transPos.x,transPos.y,0,1);
+}
