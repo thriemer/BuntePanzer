@@ -1,6 +1,5 @@
 package texture;
 
-import java.awt.image.BufferedImage;
 import java.nio.ByteBuffer;
 import java.nio.IntBuffer;
 import java.util.HashMap;
@@ -8,14 +7,12 @@ import java.util.Map;
 import static org.lwjgl.stb.STBImage.stbi_failure_reason;
 import static org.lwjgl.stb.STBImage.stbi_image_free;
 import static org.lwjgl.stb.STBImage.stbi_info_from_memory;
-import static org.lwjgl.stb.STBImage.*;
 import static org.lwjgl.stb.STBImage.stbi_load_from_memory;
 
 import org.joml.Vector2f;
 import org.lwjgl.opengl.GL11;
 import org.lwjgl.system.MemoryStack;
 import static org.lwjgl.system.MemoryStack.stackPush;
-import static org.lwjgl.system.MemoryUtil.memAlloc;
 import static org.lwjgl.system.MemoryUtil.memFree;
 import util.Loader;
 
