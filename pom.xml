@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>groupId</groupId>
-    <artifactId>DSB_OpenGL</artifactId>
+    <artifactId>BuntePanzer</artifactId>
     <version>1.0-SNAPSHOT</version>
     <build>
         <plugins>
