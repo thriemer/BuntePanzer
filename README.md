@@ -1,6 +1,48 @@
 # Bunte Panzer!
 
-Bunte Panzer ist ein Java/LWJGL clone des Online Spiels [AZTanks](https://www.agame.com/game/az). Ein kurzes (45s) Video vom Gameplay kann [HIER](https://www.youtube.com/watch?v=yb6AUVgGRg0) angeschaut werden. Oben stehen JAR-Dateien zur verfügung, um das Spiel selbst mal auszuprobieren (jedoch konnte ich die MacOS Version noch nicht testen) und im main-branch kann man den Sourcecode anschauen.
+Bunte Panzer ist ein Java/LWJGL clone des Online Spiels [AZTanks](https://www.agame.com/game/az). Ein kurzes (45s) Video vom Gameplay kann [HIER](https://www.youtube.com/watch?v=yb6AUVgGRg0) angeschaut werden. Im **jars**-Ordner stehen JAR-Dateien zur verfügung, um das Spiel selbst mal auszuprobieren, jedoch konnte ich die MacOS Version noch nicht testen.
+
+Wie schon erwähnt ist Bunte Panzer ein Clone vom dem Online Browser Spiel "AZ Tanks", welches ich in der Schule mit Klassenkameraden immer gespielt habe. 
+
+
+Man steuert bunte Panzer aus der Vogelperspektive in einer Arena und versucht seine Mitspieler abzuschießen. Zusätzlich kann man noch stärkere Waffen aufsammeln.
+
+
+Das Spielprinziep ist ziemlich simpel und deswegen perfekt für mein erstes Spiel, was ich fertig gestellt habe. Zusätzlich ist das ein "X Player 1 Computer" Spiel, das heißt ein großteil des Spielspaßes kommt davon, mit seinen Mitspielern Wettzueifern und zu lachen. 
+
+
+## Building and Running
+
+Die Hauptklasse ist **steamTanks/mainGame/BuntePanzer.java**.
+
+
+
+### [LWJGL] Failed to load a library:
+
+```
+[LWJGL] Failed to load a library. Possible solutions:
+	a) Add the directory that contains the shared library to -Djava.library.path or -Dorg.lwjgl.librarypath.
+	b) Add the JAR that contains the shared library to the classpath.
+[LWJGL] Enable debug mode with -Dorg.lwjgl.util.Debug=true for better diagnostics.
+[LWJGL] Enable the SharedLibraryLoader debug mode with -Dorg.lwjgl.util.DebugLoader=true for better diagnostics.
+Exception in thread "main" java.lang.UnsatisfiedLinkError: Failed to locate library: liblwjgl.so
+	at org.lwjgl.system.Library.loadSystem(Library.java:162)
+	at org.lwjgl.system.Library.loadSystem(Library.java:62)
+	at org.lwjgl.system.Library.<clinit>(Library.java:50)
+	at org.lwjgl.system.MemoryUtil.<clinit>(MemoryUtil.java:97)
+	at org.lwjgl.system.Pointer$Default.<clinit>(Pointer.java:67)
+	at org.lwjgl.system.Callback.<clinit>(Callback.java:41)
+	at graphics.context.Display.create(Display.java:62)
+	at graphics.context.Display.<init>(Display.java:56)
+	at steamTanks.mainGame.BuntePanzer.<init>(BuntePanzer.java:48)
+	at steamTanks.mainGame.BuntePanzer.main(BuntePanzer.java:42)
+
+Process finished with exit code 1
+
+```
+
+Sollte ein Fehler dieser Art auftreten, dann könnte die Lösung dafür sein, bei den Maven-Profiles das Profile mit den Natives für sein System auszuwählen und Maven zu aktualisieren.
+
 ## Features:
 
 ### LWJGL (Lightweight Java Game Library)
@@ -22,9 +64,7 @@ Um festzustellen, ob das möglich ist, projeziert man alle Eckpunkt der beiden T
 
 Man kann sie trennen, indem man sich die Achse mit der kleinste Überlappung sucht und dann entlang der Normalen die Körper trennt.
 
-![Bild: Verschiedene Fälle](SAT.jpg)
-
-![Bild: Keine Überlappung](on_axes.jpg)
+![Bild: Verschiedene Fälle](images/SAT.jpg)
 
 
 ### OpenGL und OpenAL
@@ -58,12 +98,3 @@ Der Algorithmus hat die praktische Eigenschaft, dass er ein perfektes Labyrinth 
 
 
 Um die Karte zusätzlich interessanter zu gestalten, benutze ich einen [Randomwalker](https://en.wikipedia.org/wiki/Random_walk).
-
-### Gameplay
-Wie schon erwähnt ist Bunte Panzer ein Clone vom dem Online Browser Spiel "AZ Tanks", welches ich in der Schule mit Klassenkameraden immer gespielt habe. 
-
-
-Man steuert bunte Panzer aus der Vogelperspektive in einer Arena und versucht seine Mitspieler abzuschießen. Zusätzlich kann man noch stärkere Waffen aufsammeln.
-
-
-Das Spielprinziep ist ziemlich simpel und deswegen perfekt für mein erstes Spiel, was ich fertig gestellt habe. Zusätzlich ist das ein "X Player 1 Computer" Spiel, das heißt ein großteil des Spielspaßes kommt davon, mit seinen Mitspielern Wettzueifern und zu lachen. 
