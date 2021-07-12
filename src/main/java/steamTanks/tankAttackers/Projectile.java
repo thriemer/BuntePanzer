@@ -12,7 +12,7 @@ import graphics.texture.TextureManager;
 public class Projectile extends TankAttack {
 
 	public Projectile(Tank home, Vector2f position, Vector2f velocity, float textureIndex, MessageBus bus) {
-		super(home, position, new ArcHitbox(position, 0.05f), TextureManager.getTexture("steamTanks/tankAttackers", 2, 2), bus);
+		super(home, position, new ArcHitbox(position, 0.05f), TextureManager.getTexture("tankAttackers", 2, 2), bus);
 		texture.setSize(0.15f, 0.15f).setColor(textureIndex);
 		this.texture.setFrameID(3);
 		this.velocity.set(velocity);

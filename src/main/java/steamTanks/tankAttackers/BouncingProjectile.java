@@ -15,7 +15,7 @@ public class BouncingProjectile extends Projectile {
 
 	public BouncingProjectile(Tank home, Vector2f position, Vector2f velocity, float textureIndex, MessageBus bus) {
 		super(home, position, velocity, textureIndex, bus);
-		this.texture = TextureManager.getTexture("steamTanks/tankAttackers", 2, 2);
+		this.texture = TextureManager.getTexture("tankAttackers", 2, 2);
 		this.texture.setFrameID(0);
 		texture.setSize(0.15f, 0.15f).setColor(textureIndex);
 	}

@@ -18,7 +18,7 @@ public class Grenade extends BouncingProjectile {
 	public Grenade(Tank home, Vector2f position, Vector2f velocity, float textureIndex, MessageBus bus) {
 		super(home, position, velocity, textureIndex, bus);
 		this.bouncesLeft = 15;
-		this.texture = TextureManager.getTexture("steamTanks/tankAttackers", 2, 2);
+		this.texture = TextureManager.getTexture("tankAttackers", 2, 2);
 		this.texture.setFrameID(2);
 		texture.setSize(0.22f, 0.22f).setColor(textureIndex);
 		this.hitbox.radius=0.11f;

@@ -23,7 +23,7 @@ public class Shrapnel extends BouncingProjectile {
 				Maths.createUnitVecFromAngle(angle).mul(-shrapnelStartVel * ((float) Math.random() * 1.5f + 1f)),
 				customColor, bus);
 		centerPos = new Vector2f(centerOfSpawn);
-		this.texture = TextureManager.getTexture("steamTanks/tankAttackers", 2, 2);
+		this.texture = TextureManager.getTexture("tankAttackers", 2, 2);
 		this.texture.setFrameID(1);
 		this.hitbox.topLeft = this.position;
 		this.hitbox.radius = 0.15f / 2f;
